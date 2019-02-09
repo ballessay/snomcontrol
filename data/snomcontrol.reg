@@ -1,0 +1,42 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\tel]
+@="URL:tel Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\tel\shell]
+
+[HKEY_CLASSES_ROOT\tel\shell\open]
+
+[HKEY_CLASSES_ROOT\tel\shell\open\command]
+@="\"C:\\Program Files\\snomcontrol\\snomcontrol.exe\" \"%1\"" 
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\callto]
+@="URL:callto"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\tel]
+@="URL:tel"
+"URL Protocol"=""
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\snomcontrol.callto]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\snomcontrol.callto\Shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\snomcontrol.callto\Shell\Open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\snomcontrol.callto\Shell\Open\Command]
+@="\"C:\\Program Files\\snomcontrol\\snomcontrol.exe\" \"%1\"" 
+
+[HKEY_CURRENT_USER\SOFTWARE\snomcontrol]
+
+[HKEY_CURRENT_USER\SOFTWARE\snomcontrol\Capabilities]
+"ApplicationDescription"="snomcontrol"
+"ApplicationName"="snomcontrol"
+
+[HKEY_CURRENT_USER\SOFTWARE\snomcontrol\Capabilities\URLAssociations]
+"callto"="snomcontrol.callto"
+"tel"="snomcontrol.callto"
+
+[HKEY_CURRENT_USER\SOFTWARE\RegisteredApplications]
+"snomcontrol"="Software\\snomcontrol\\Capabilities"
