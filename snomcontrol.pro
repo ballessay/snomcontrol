@@ -37,7 +37,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    icons/snomcontrol.qrc
+    resources/snomcontrol.qrc \
+    3rdparty/qdarkstyle/style.qrc
 
 DISTFILES += \
     CODING.md \

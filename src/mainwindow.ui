@@ -14,7 +14,7 @@
    <string>snomcontrol</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../icons/snomcontrol.qrc">
+   <iconset resource="../resources/snomcontrol.qrc">
     <normaloff>:/snom_logo.png</normaloff>:/snom_logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -149,7 +149,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../icons/snomcontrol.qrc"/>
+  <include location="../resources/snomcontrol.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -3,6 +3,8 @@
 #include <QSystemTrayIcon>
 #include <QMessageBox>
 #include <QTimer>
+#include <QFile>
+#include <QTextStream>
 
 
 
@@ -13,6 +15,13 @@ int main(int argc, char *argv[])
     app.setOrganizationName("ballessay");
     app.setOrganizationDomain("ballessay.de");
     app.setApplicationName("snomcontrol");
+
+    QFile stylesheet( ":/QTDark.stylesheet");
+    //QFile stylesheet(":qdarkstyle/style.qss");
+    stylesheet.open(QFile::ReadOnly | QFile::Text);
+    QTextStream ts(&stylesheet);
+
+    app.setStyleSheet(ts.readAll());
 
     CMainWindow w;
 

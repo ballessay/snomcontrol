@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>snom_logo.png</file>
+        <file>QTDark.stylesheet</file>
     </qresource>
 </RCC>
