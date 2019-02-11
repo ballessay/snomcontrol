@@ -1,0 +1,4 @@
+Install.bat
+snomcontrol.reg
+excludes.txt
+snomcontrol.desktop
