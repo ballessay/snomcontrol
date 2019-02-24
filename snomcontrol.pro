@@ -43,5 +43,6 @@ RESOURCES += \
 DISTFILES += \
     CODING.md \
     COPYING \
-    README.md
+    README.md \
+    3rdparty/Sources.md
 

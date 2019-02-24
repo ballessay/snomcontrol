@@ -1,16 +1,18 @@
 SOURCES += \
-        $$PWD/main.cpp \
-        $$PWD/mainwindow.cpp \
+    $$PWD/main.cpp \
+    $$PWD/mainwindow.cpp \
     $$PWD/settings.cpp \
     $$PWD/settingsdialog.cpp \
     $$PWD/requesthandler.cpp
 
 HEADERS += \
-        $$PWD/mainwindow.h \
+    $$PWD/mainwindow.h \
     $$PWD/settings.h \
     $$PWD/settingsdialog.h \
     $$PWD/requesthandler.h
 
 FORMS += \
-        $$PWD/mainwindow.ui \
-    $$PWD/settingsdialog.ui
+    $$PWD/mainwindow.ui \
+    $$PWD/settingsdialog.ui \
+    $$PWD/buttons.ui
+
