@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include <QApplication>
 #include "singleapplication.h"
 #include <QSystemTrayIcon>
 #include <QMessageBox>
