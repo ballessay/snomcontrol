@@ -11,6 +11,8 @@ namespace Ui {
     class CMainWindow;
 }
 
+class CWebWidget;
+
 
 
 class CMainWindow : public QMainWindow
@@ -28,6 +30,7 @@ public slots:
 
     // Window
     void on_actionSettings_triggered();
+    void on_pReloadPushButton_pressed();
     void on_pDialPushButton_pressed();
     void on_pHangUpPushButton_pressed();
     void on_pNumberLineEdit_returnPressed();
@@ -45,6 +48,7 @@ private:
 private:
     Ui::CMainWindow* m_pUi;
     QSystemTrayIcon* m_pSysTray;
+    CWebWidget* m_pWebWidget;
     SSettings m_settings;
     CRequestHandler m_requestHandler;
 };

@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 
 #include "settingsdialog.h"
+#include "webwidget.h"
 
 #include <QDebug>
 
@@ -30,10 +31,23 @@ CMainWindow::CMainWindow(QWidget* pParent) :
 
     m_settings.Load();
 
+    m_pWebWidget = new CWebWidget(m_settings, this);
+    m_pWebWidget->setObjectName(QString::fromUtf8("pWebWidget"));
+
+    m_pUi->pMainGridLayout->addWidget(m_pWebWidget, 1, 0, 1, 1);
+
+    connect(m_pWebWidget, &CWebWidget::ReloadFinished,
+            m_pUi->pReloadPushButton, &QPushButton::setEnabled);
+
     connect(&m_requestHandler, &CRequestHandler::Message,
             this, &CMainWindow::ShowStatusBarMessage);
     connect(&m_requestHandler, &CRequestHandler::Error,
             this, &CMainWindow::ShowStatusBarMessage);
+
+    m_pUi->pReloadPushButton->setIcon(QIcon(":/reload.png"));
+    m_pUi->pReloadPushButton->setEnabled(false);
+    m_pUi->pDialPushButton->setIcon(QIcon(":/ok.png"));
+    m_pUi->pHangUpPushButton->setIcon(QIcon(":/cancel.png"));
 }
 
 
@@ -85,6 +99,12 @@ void CMainWindow::on_actionSettings_triggered()
         m_settings = d.CurrentSettings();
         m_settings.Save();
     }
+}
+
+
+void CMainWindow::on_pReloadPushButton_pressed()
+{
+    m_pWebWidget->Reload();
 }
 
 
@@ -163,5 +183,7 @@ void CMainWindow::Dial(QString sNumber)
     }
 
     m_requestHandler.Dial(sNumber);
+
+    m_pWebWidget->Reload();
 }
 
