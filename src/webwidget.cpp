@@ -5,8 +5,8 @@
 
 
 
-CWebWidget::CWebWidget(const SSettings& settings, QWidget *parent) :
-    QWidget(parent),
+CWebWidget::CWebWidget(const SSettings& settings, QWidget* pParent) :
+    QWidget(pParent),
     m_pUi(new Ui::CWebWidget),
     m_settings(settings),
     m_bFirstLoadFinished(false)
@@ -57,8 +57,8 @@ void CWebWidget::LoadingFinished(bool)
     code = QStringLiteral("qt.jQuery('table[dir=\"ltr\"]  > tbody > tr:first-child').remove();");
     page->runJavaScript(code);
 
-    //code = QStringLiteral("qt.jQuery('table td.headerText').empty();");
-    //page->runJavaScript(code);
+//    code = QStringLiteral("qt.jQuery('table td.headerText').empty();");
+//    page->runJavaScript(code);
 
     emit ReloadFinished(true);
 
@@ -85,5 +85,5 @@ void CWebWidget::Reload()
 
 void CWebWidget::showEvent(QShowEvent*)
 {
-    Reload();
+    //Reload();
 }

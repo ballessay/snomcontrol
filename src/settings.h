@@ -5,7 +5,6 @@
 #include <QStringList>
 
 
-
 struct SSettings
 {
     void Save();
@@ -13,9 +12,7 @@ struct SSettings
 
     QString sPhoneUrl;  ///< DNS of IP of the phone
 
-    QString sSipAccount;        ///< Accountname or ID
-    //int32_t iSipDomain = -1;    ///< Index of the Domain to use
-    //QStringList sipDomains;     ///< List of possible SIP domains
+    QString sSipAccount;        ///< Accountname in the form: id@provider.com
 
     QString sUsername;  ///< Phone username
     QString sPassword;  ///< Phone password

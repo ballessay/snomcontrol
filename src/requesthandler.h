@@ -5,9 +5,7 @@
 #include <QNetworkAccessManager>
 #include <QQueue>
 
-
 struct SSettings;
-
 
 
 class CRequestHandler : public QObject

@@ -14,8 +14,9 @@ struct SSettings;
 class CWebWidget : public QWidget
 {
     Q_OBJECT
+
 public:
-    explicit CWebWidget(const SSettings& settings, QWidget *parent = nullptr);
+    explicit CWebWidget(const SSettings& settings, QWidget* pParent = nullptr);
     ~CWebWidget() override;
 
 signals:

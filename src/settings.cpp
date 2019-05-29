@@ -11,8 +11,6 @@ namespace
 
     const char* pPhoneUrl = "phoneUrl";
     const char* pSipAccount = "sipAccount";
-    //const char* pSipDomain = "sipDomain";
-    //const char* pSipDomains = "sipDomains";
     const char* pUsername = "username";
     const char* pPassword = "password";
     const char* pConvertPlus = "convertPlus";
@@ -66,8 +64,6 @@ void SSettings::Save()
 
     settings.setValue(pPhoneUrl, sPhoneUrl);
     settings.setValue(pSipAccount, sSipAccount);
-    //settings.setValue(pSipDomain, iSipDomain);
-    //settings.setValue(pSipDomains, sipDomains);
     settings.setValue(pUsername, Obscure(sUsername));
     settings.setValue(pPassword, Obscure(sPassword));
     settings.setValue(pConvertPlus, bConvertPlus);
@@ -83,8 +79,6 @@ void SSettings::Load()
 
     sPhoneUrl = settings.value(pPhoneUrl).toString();
     sSipAccount = settings.value(pSipAccount).toString();
-    //iSipDomain = settings.value(pSipDomain).toInt();
-    //sipDomains = settings.value(pSipDomains).toStringList();
     sUsername = Unobscure(settings.value(pUsername).toByteArray());
     sPassword = Unobscure(settings.value(pPassword).toByteArray());
     bConvertPlus = settings.value(pConvertPlus).toBool();

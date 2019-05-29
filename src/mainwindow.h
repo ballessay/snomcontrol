@@ -6,13 +6,11 @@
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 
-
 namespace Ui {
     class CMainWindow;
 }
 
 class CWebWidget;
-
 
 
 class CMainWindow : public QMainWindow

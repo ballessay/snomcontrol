@@ -3,12 +3,8 @@
 
 #include <QDialog>
 
-
 struct SSettings;
-namespace Ui {
-    class CSettingsDialog;
-}
-
+namespace Ui { class CSettingsDialog; }
 
 
 class CSettingsDialog : public QDialog
