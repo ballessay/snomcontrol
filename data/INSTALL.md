@@ -15,6 +15,9 @@ about:config
 Add new boolean
 network.protocol-handler.expose.tel value: false
 
+# ubuntu ex
+gconftool-2 -s /desktop/gnome/url-handlers/tel/command '/home/cballes/bin/snomcontrol %s' --type String
+gconftool-2 -s /desktop/gnome/url-handlers/tel/enabled --type Boolean true
 
 # Windows 10
 
