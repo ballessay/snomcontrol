@@ -13,7 +13,9 @@
 
 namespace
 {
-    const QStringList supportedUirs{QStringList() << "callto:" << "sip:" << "tel:"};
+    const QStringList supportedUirs{QStringList() << "callto:" << "sip:" << "tel:"
+                                   // For thunderbird cardbook default
+                                   << "undefined:"};
 }
 
 
