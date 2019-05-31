@@ -85,5 +85,5 @@ void CWebWidget::Reload()
 
 void CWebWidget::showEvent(QShowEvent*)
 {
-    //Reload();
+    Reload();
 }
