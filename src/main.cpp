@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
     app.setApplicationName("snomcontrol");
 
     QFile stylesheet( ":/QTDark.stylesheet");
-    //QFile stylesheet(":qdarkstyle/style.qss");
-    stylesheet.open(QFile::ReadOnly | QFile::Text);
-    QTextStream ts(&stylesheet);
-
-    app.setStyleSheet(ts.readAll());
+    if (stylesheet.open(QFile::ReadOnly | QFile::Text))
+    {
+      QTextStream ts(&stylesheet);
+      app.setStyleSheet(ts.readAll());
+    }
 
     CMainWindow w;
 
