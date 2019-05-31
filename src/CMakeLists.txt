@@ -10,7 +10,11 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-add_executable(${APPNAME} main.cpp buttons.ui mainwindow.h requesthandler.cpp settings.h settingsdialog.ui mainwindow.ui requesthandler.h settingsdialog.cpp mainwindow.cpp  settings.cpp  settingsdialog.h webwidget.cpp webwidget.h webwidget.ui ../3rdparty/SingleApplication-3.0.14/singleapplication.h ../3rdparty/SingleApplication-3.0.14/singleapplication.cpp ../3rdparty/SingleApplication-3.0.14/singleapplication_p.h ../3rdparty/SingleApplication-3.0.14/singleapplication_p.cpp ../resources/snomcontrol.qrc)
+IF(MSVC)
+    SET(OPTIONS WIN32)
+ENDIF(MSVC)
+
+add_executable(${APPNAME} ${OPTIONS} main.cpp buttons.ui mainwindow.h requesthandler.cpp settings.h settingsdialog.ui mainwindow.ui requesthandler.h settingsdialog.cpp mainwindow.cpp  settings.cpp  settingsdialog.h webwidget.cpp webwidget.h webwidget.ui ../3rdparty/SingleApplication-3.0.14/singleapplication.h ../3rdparty/SingleApplication-3.0.14/singleapplication.cpp ../3rdparty/SingleApplication-3.0.14/singleapplication_p.h ../3rdparty/SingleApplication-3.0.14/singleapplication_p.cpp ../resources/snomcontrol.qrc)
 
 find_package(Qt5 COMPONENTS Widgets Network WebEngineWidgets)
 
