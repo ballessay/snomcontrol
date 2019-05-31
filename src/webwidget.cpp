@@ -57,8 +57,8 @@ void CWebWidget::LoadingFinished(bool)
     code = QStringLiteral("qt.jQuery('table[dir=\"ltr\"]  > tbody > tr:first-child').remove();");
     page->runJavaScript(code);
 
-//    code = QStringLiteral("qt.jQuery('table td.headerText').empty();");
-//    page->runJavaScript(code);
+    code = QStringLiteral("qt.jQuery('table .bubbleTable').remove();");
+    page->runJavaScript(code);
 
     emit ReloadFinished(true);
 
