@@ -4,8 +4,7 @@ A small, lightweight application to control snom 3xx phones from the desktop.
 
 ## State: alpha
 
-Currently only dialing numbers is implemented. If needed, more features will get
-implemented.
+Currently only dialing numbers is implemented. If needed, more features will be added.
 
 
 ## Documentation
