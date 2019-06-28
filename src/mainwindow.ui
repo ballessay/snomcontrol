@@ -145,6 +145,7 @@
     <property name="title">
      <string>Fi&amp;le</string>
     </property>
+    <addaction name="actionInit"/>
     <addaction name="actionSettings"/>
     <addaction name="separator"/>
     <addaction name="actionHide"/>
@@ -183,6 +184,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionInit">
+   <property name="text">
+    <string>Init</string>
    </property>
   </action>
  </widget>

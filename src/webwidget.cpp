@@ -2,7 +2,7 @@
 #include "ui_webwidget.h"
 #include "settings.h"
 #include <QFile>
-
+#include <QTimer>
 
 
 CWebWidget::CWebWidget(const SSettings& settings, QWidget* pParent) :
@@ -23,9 +23,7 @@ CWebWidget::CWebWidget(const SSettings& settings, QWidget* pParent) :
     connect(m_pUi->webEngineView, &QWebEngineView::loadFinished,
             this, &CWebWidget::LoadingFinished);
 
-    m_pUi->webEngineView->setUrl(QUrl("http://" + m_settings.sUsername + ":" +
-                                      m_settings.sPassword + "@" +
-                                      m_settings.sPhoneUrl));
+    QTimer::singleShot(500, this, SLOT(SetUrl()));
 
     m_pUi->webEngineView->setContextMenuPolicy(Qt::PreventContextMenu);
 }
@@ -34,6 +32,14 @@ CWebWidget::CWebWidget(const SSettings& settings, QWidget* pParent) :
 CWebWidget::~CWebWidget()
 {
     delete m_pUi;
+}
+
+
+void CWebWidget::SetUrl()
+{
+    m_pUi->webEngineView->setUrl(QUrl("http://" + m_settings.sUsername + ":" +
+                                      m_settings.sPassword + "@" +
+                                      m_settings.sPhoneUrl));
 }
 
 

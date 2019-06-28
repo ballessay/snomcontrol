@@ -93,6 +93,12 @@ void CMainWindow::MessageReceived(int, QByteArray message)
 }
 
 
+void CMainWindow::on_actionInit_triggerd()
+{
+  m_pWebWidget->SetUrl();
+}
+
+
 void CMainWindow::on_actionSettings_triggered()
 {
     CSettingsDialog d(m_settings, this);

@@ -23,6 +23,7 @@ signals:
     void ReloadFinished(bool);
 
 public slots:
+    void SetUrl();
     void LoadingFinished(bool);
     void Reload();
 
