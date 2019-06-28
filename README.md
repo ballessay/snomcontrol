@@ -1,6 +1,6 @@
 # snomcontrol
 
-A small, lightweight application to control snom 3xx phones from the desktop.
+An application to control snom 3xx phones from the desktop.
 
 ## State: alpha
 
