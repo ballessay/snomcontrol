@@ -93,7 +93,7 @@ void CMainWindow::MessageReceived(int, QByteArray message)
 }
 
 
-void CMainWindow::on_actionInit_triggerd()
+void CMainWindow::on_actionInit_triggered()
 {
   m_pWebWidget->SetUrl();
 }

@@ -27,7 +27,7 @@ public slots:
     void MessageReceived(int instanceId, QByteArray message);
 
     // Window
-    void on_actionInit_triggerd();
+    void on_actionInit_triggered();
     void on_actionSettings_triggered();
     void on_pReloadPushButton_pressed();
     void on_pDialPushButton_pressed();
