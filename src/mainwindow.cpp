@@ -176,9 +176,9 @@ void CMainWindow::TrayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason)
     {
-      case QSystemTrayIcon::Trigger:
-      case QSystemTrayIcon::DoubleClick:
-      case QSystemTrayIcon::MiddleClick:
+    case QSystemTrayIcon::Trigger:
+    case QSystemTrayIcon::DoubleClick:
+    case QSystemTrayIcon::MiddleClick:
         ToggleVisibility();
         break;
     default:
