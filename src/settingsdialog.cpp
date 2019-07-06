@@ -12,8 +12,6 @@ CSettingsDialog::CSettingsDialog(const SSettings& settings, QWidget* pParent) :
 {
     m_pUi->setupUi(this);
 
-    m_pUi->pAccountGroupBox->hide();
-
     m_pUi->pPhoneUrlLineEdit->setText(settings.sPhoneUrl);
     m_pUi->pSipAccountLineEdit->setText(settings.sSipAccount);
 
