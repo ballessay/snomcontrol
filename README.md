@@ -1,4 +1,4 @@
-# snomcontrol [![Build Status](https://travis-ci.org/ballessay/snomcontrol.svg?branch=master)](https://travis-ci.org/ballessay/snomcontrol)
+# snomcontrol [![Build Status](https://travis-ci.org/ballessay/snomcontrol.svg?branch=master)](https://travis-ci.org/ballessay/snomcontrol) [![Build status](https://ci.appveyor.com/api/projects/status/0u5a25r87miv002k?svg=true)](https://ci.appveyor.com/project/ballessay/snomcontrol) 
 
 An application to control snom 3xx phones from the desktop.
 
