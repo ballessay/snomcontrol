@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
     QFile stylesheet( ":/QTDark.stylesheet");
     if (stylesheet.open(QFile::ReadOnly | QFile::Text))
     {
-      QTextStream ts(&stylesheet);
-      app.setStyleSheet(ts.readAll());
+        QTextStream ts(&stylesheet);
+        app.setStyleSheet(ts.readAll());
     }
 
     CMainWindow w;
@@ -31,12 +31,14 @@ int main(int argc, char *argv[])
         return 0;
     } else {
         if (!QSystemTrayIcon::isSystemTrayAvailable()) {
-            QMessageBox::critical(nullptr, QObject::tr("Systray"),
-                                  QObject::tr("I couldn't detect any system "
-                                              "tray on this system."));
-            return 1;
+            w.DisableHideMenuEntry();
         }
-        QApplication::setQuitOnLastWindowClosed(false);
+        else
+        {
+            w.SetupSystemTray();
+
+            QApplication::setQuitOnLastWindowClosed(false);
+        }
 
         QObject::connect(&app, &SingleApplication::receivedMessage,
                          &w, &CMainWindow::MessageReceived);

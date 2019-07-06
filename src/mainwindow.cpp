@@ -29,8 +29,6 @@ CMainWindow::CMainWindow(QWidget* pParent) :
     connect(m_pUi->actionQuit, &QAction::triggered,
             qApp, &QCoreApplication::quit);
 
-    SetupSystemTray();
-
     m_settings.Load();
 
     m_pWebWidget = new CWebWidget(m_settings, this);
@@ -56,6 +54,32 @@ CMainWindow::CMainWindow(QWidget* pParent) :
 CMainWindow::~CMainWindow()
 {
     delete m_pUi;
+}
+
+
+void CMainWindow::DisableHideMenuEntry()
+{
+  m_pUi->actionHide->setEnabled(false);
+}
+
+
+void CMainWindow::SetupSystemTray()
+{
+    QMenu* pMenu = new QMenu(this);
+
+    pMenu->addAction(tr("&Toggle visibility"), this,
+                     &CMainWindow::ToggleVisibility, tr("Ctrl+T"));
+    pMenu->addSeparator();
+    pMenu->addAction(tr("&Quit"), qApp, &QCoreApplication::quit, tr("Ctrl+Q"));
+
+    m_pSysTray = new QSystemTrayIcon(this);
+
+   connect(m_pSysTray, &QSystemTrayIcon::activated,
+           this, &CMainWindow::TrayIconActivated);
+
+    m_pSysTray->setContextMenu(pMenu);
+    m_pSysTray->setIcon(QIcon(":/snom_logo.png"));
+    m_pSysTray->show();
 }
 
 
@@ -160,26 +184,6 @@ void CMainWindow::TrayIconActivated(QSystemTrayIcon::ActivationReason reason)
     default:
         break;
     }
-}
-
-
-void CMainWindow::SetupSystemTray()
-{
-    QMenu* pMenu = new QMenu(this);
-
-    pMenu->addAction(tr("&Toggle visibility"), this,
-                     &CMainWindow::ToggleVisibility, tr("Ctrl+T"));
-    pMenu->addSeparator();
-    pMenu->addAction(tr("&Quit"), qApp, &QCoreApplication::quit, tr("Ctrl+Q"));
-
-    m_pSysTray = new QSystemTrayIcon(this);
-
-   connect(m_pSysTray, &QSystemTrayIcon::activated,
-           this, &CMainWindow::TrayIconActivated);
-
-    m_pSysTray->setContextMenu(pMenu);
-    m_pSysTray->setIcon(QIcon(":/snom_logo.png"));
-    m_pSysTray->show();
 }
 
 

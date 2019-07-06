@@ -21,6 +21,10 @@ public:
     explicit CMainWindow(QWidget* pParent = nullptr);
     ~CMainWindow();
 
+    void DisableHideMenuEntry();
+
+    void SetupSystemTray();
+
 public slots:
     void DialWithProgramArg();
     // SingleApplication
@@ -40,8 +44,6 @@ public slots:
     void TrayIconActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:
-    void SetupSystemTray();
-
     void Dial(QString sNumber);
 
 private:
