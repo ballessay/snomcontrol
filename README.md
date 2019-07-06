@@ -2,7 +2,10 @@
 
 An application to control snom 3xx phones from the desktop.
 
-## State: alpha
+![Screenshot](https://raw.githubusercontent.com/ballessay/snomcontrol/master/resources/screenshot.png)
+
+
+## State: beta
 
 Currently only dialing numbers is implemented. If needed, more features will be added.
 
