@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
+Comment=Control snom desktop phones
 Name=snomcontrol
 Exec=snomcontrol
 Icon=snomcontrol
