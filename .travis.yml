@@ -1,0 +1,31 @@
+language: cpp
+sudo: required
+dist: xenial
+
+os: linux
+
+
+before_script:
+  - sudo add-apt-repository --yes ppa:beineri/opt-qt-5.12.3-xenial
+  - sudo apt-get update
+  - sudo apt-get install -qq qt512-meta-full cmake libgl1-mesa-dev
+
+script:
+  - QT_ENV_SCRIPT=$(find /opt -name 'qt*-env.sh')
+  - source $QT_ENV_SCRIPT
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+  - make -j$(nproc)
+  - DESTDIR=install make install
+  - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
+  - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
+  - # export VERSION=...
+  - ./linuxdeployqt-continuous-x86_64.AppImage install/usr/share/applications/*.desktop -appimage
+  - mkdir out
+  - mv snomcontrol*.AppImage out/
+
+after_success:
+  - ls -lh out/* 
+  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
+  - bash upload.sh out/*
