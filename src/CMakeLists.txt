@@ -24,7 +24,15 @@ target_include_directories(${APPNAME} PRIVATE ../3rdparty/SingleApplication-3.0.
 
 set_target_properties(${APPNAME} PROPERTIES CXX_EXTENSIONS OFF)
 
-install(TARGETS ${APPAME} DESTINATION bin)
+
+include(GNUInstallDirs)
+install(TARGETS ${APPNAME}
+  EXPORT ${APPNAME}-targets
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
     install(FILES org.ballessay.snomcontrol.desktop DESTINATION share/applications )
