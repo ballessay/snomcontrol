@@ -3,4 +3,4 @@ Type=Application
 Name=snomcontrol
 Exec=snomcontrol
 Icon=snomcontrol
-Categories=Development;
+Categories=Office;
