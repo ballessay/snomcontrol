@@ -12,5 +12,29 @@ before_build:
 build_script:
   - mkdir build
   - cd build
-  - cmake -G"Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=%QTDIR% ..
+  - cmake -G"Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=%QTDIR% -DCMAKE_INSTALL_PREFIX:PATH=snomcontrol ..
   - cmake --build . --target install
+  - dir
+
+after_build:
+  - windeployqt.exe snomcontrol/bin/snomcontrol.exe
+  - copy ..\data\Install.bat snomcontrol\
+  - copy ..\data\snomcontrol.reg snomcontrol\
+  - copy ..\data\excludes.txt snomcontrol\
+    #  - 7z a snomcontrol-%APPVEYOR_BUILD_VERSION%-%APPVEYOR_REPO_COMMIT%.zip snomcontrol
+  - 7z a snomcontrol-win-%APPVEYOR_REPO_COMMIT%.zip snomcontrol
+  - mv snomcontrol*.zip ..\
+
+artifacts:
+  - path: snomcontrol*.zip
+
+
+deploy:
+  description: snomcontrol-v$(appveyor_build_version)
+  provider: GitHub
+  auth_token:
+    secure: sclzWVQ+Anp02CdSbYJWOy5t+q75nOlkMH9yNToCCjL1fhO1ujYc2Boa3c2DF4aU
+  artifact: /snomcontrol.*.zip/
+  draft: false
+  prerelease: true
+
