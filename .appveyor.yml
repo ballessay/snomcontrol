@@ -34,7 +34,7 @@ artifacts:
 
 
 deploy:
-  description: snomcontrol-v$(appveyor_build_version)
+  description: snomcontrol-$(appveyor_build_version)
   provider: GitHub
   auth_token:
     secure: sclzWVQ+Anp02CdSbYJWOy5t+q75nOlkMH9yNToCCjL1fhO1ujYc2Boa3c2DF4aU
