@@ -17,7 +17,7 @@ build_script:
   - mkdir build
   - cd build
   - cmake -G"Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=%QTDIR% -DCMAKE_INSTALL_PREFIX:PATH=snomcontrol ..
-  - cmake --build . --target install
+  - cmake --build . --config Release --target install
   - dir
 
 after_build:
