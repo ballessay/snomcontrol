@@ -35,37 +35,9 @@ install(TARGETS ${APPNAME}
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
-    install(FILES org.ballessay.snomcontrol.desktop DESTINATION share/applications )
-
+    install(FILES org.ballessay.snomcontrol.desktop DESTINATION share/applications)
     install(FILES ../resources/snomcontrol.png DESTINATION share/icons/hicolor/256x256/apps)
+    install(FILES ../resources/snomcontrol.appdata.xml DESTINATION share/metainfo)
 
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-
-
-#function(call _id)
-#    if (NOT COMMAND ${_id})
-#        message(FATAL_ERROR "Unsupported function/macro \"${_id}\"")
-#    else()
-#        set(_helper "${CMAKE_BINARY_DIR}/helpers/macro_helper_${_id}.cmake")
-#        if (NOT EXISTS "${_helper}")
-#            file(WRITE "${_helper}" "${_id}(\$\{ARGN\})\n")
-#        endif()
-#        include("${_helper}")
-#    endif()
-#endfunction()
-#
-#function(tester)
-#  message("tester called")
-#endfunction()
-#
-#macro(test func)
-#  message("${func}")
-#  call(${func})
-#endmacro()
-#
-#test(tester)
-
-
-
-
 
