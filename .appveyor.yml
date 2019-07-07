@@ -1,5 +1,5 @@
 image: 'Visual Studio 2017'
-version: 1.0.{build}
+version: v1.0.{build}-beta
 
 branches:
   only:
@@ -40,5 +40,5 @@ deploy:
     secure: sclzWVQ+Anp02CdSbYJWOy5t+q75nOlkMH9yNToCCjL1fhO1ujYc2Boa3c2DF4aU
   artifact: /snomcontrol.*.zip/
   draft: false
-  prerelease: false
+  prerelease: true
 
