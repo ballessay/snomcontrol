@@ -11,7 +11,9 @@
 
 int main(int argc, char *argv[])
 {
-    SingleApplication app(argc, argv, true);
+    SingleApplication::Options options = SingleApplication::User |
+                                         SingleApplication::ExcludeAppPath;
+    SingleApplication app(argc, argv, true, options);
 
     app.setOrganizationName("ballessay");
     app.setOrganizationDomain("ballessay.de");
