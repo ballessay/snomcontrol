@@ -14,13 +14,32 @@ IF(MSVC)
     SET(OPTIONS WIN32)
 ENDIF(MSVC)
 
-add_executable(${APPNAME} ${OPTIONS} main.cpp buttons.ui mainwindow.h requesthandler.cpp settings.h settingsdialog.ui mainwindow.ui requesthandler.h settingsdialog.cpp mainwindow.cpp  settings.cpp  settingsdialog.h webwidget.cpp webwidget.h webwidget.ui ../3rdparty/SingleApplication-3.0.14/singleapplication.h ../3rdparty/SingleApplication-3.0.14/singleapplication.cpp ../3rdparty/SingleApplication-3.0.14/singleapplication_p.h ../3rdparty/SingleApplication-3.0.14/singleapplication_p.cpp ../resources/snomcontrol.qrc)
+add_executable(${APPNAME} ${OPTIONS}
+    main.cpp
+    buttons.ui
+    mainwindow.h
+    requesthandler.cpp
+    settings.h
+    settingsdialog.ui
+    mainwindow.ui
+    requesthandler.h
+    settingsdialog.cpp
+    mainwindow.cpp
+    settings.cpp
+    settingsdialog.h
+    webwidget.cpp
+    webwidget.h
+    webwidget.ui
+    ../3rd-party/SingleApplication-3.0.14/singleapplication.h
+    ../3rd-party/SingleApplication-3.0.14/singleapplication.cpp
+    ../3rd-party/SingleApplication-3.0.14/singleapplication_p.h
+    ../3rd-party/SingleApplication-3.0.14/singleapplication_p.cpp ../resources/snomcontrol.qrc)
 
 find_package(Qt5 COMPONENTS Widgets Network WebEngineWidgets)
 
 target_link_libraries(${APPNAME} Qt5::Core Qt5::Widgets Qt5::Network Qt5::WebEngineWidgets)
 target_compile_definitions(${APPNAME} PRIVATE QAPPLICATION_CLASS=QApplication)
-target_include_directories(${APPNAME} PRIVATE ../3rdparty/SingleApplication-3.0.14/)
+target_include_directories(${APPNAME} PRIVATE ../3rd-party/SingleApplication-3.0.14/)
 
 set_target_properties(${APPNAME} PROPERTIES CXX_EXTENSIONS OFF)
 
