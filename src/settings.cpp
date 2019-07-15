@@ -54,7 +54,6 @@ namespace
 }
 
 
-
 void SSettings::Save()
 {
     QSettings settings(QSettings::IniFormat, QSettings::UserScope,

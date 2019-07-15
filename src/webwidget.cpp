@@ -71,8 +71,8 @@ void CWebWidget::LoadingFinished(bool)
     m_bFirstLoadFinished = true;
 
     page->runJavaScript(QString("window.scrollTo(%1, %2);")
-                          .arg(m_lastScrollPosition.x())
-                          .arg(m_lastScrollPosition.y()));
+                            .arg(m_lastScrollPosition.x())
+                            .arg(m_lastScrollPosition.y()));
 }
 
 
@@ -80,11 +80,11 @@ void CWebWidget::Reload()
 {
     if (m_bFirstLoadFinished)
     {
-      emit ReloadFinished(false);
+        emit ReloadFinished(false);
 
-      m_lastScrollPosition = m_pUi->webEngineView->page()->scrollPosition();
+        m_lastScrollPosition = m_pUi->webEngineView->page()->scrollPosition();
 
-      m_pUi->webEngineView->reload();
+        m_pUi->webEngineView->reload();
     }
 }
 

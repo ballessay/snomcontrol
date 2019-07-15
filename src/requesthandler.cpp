@@ -3,7 +3,6 @@
 #include <QNetworkReply>
 
 
-
 CRequestHandler::CRequestHandler(const SSettings& settings, QObject* pParent) :
     QObject (pParent),
     m_nam(this),
@@ -28,7 +27,7 @@ void CRequestHandler::Dial(const QString& sNumber)
 void CRequestHandler::HangUp()
 {
     const QString sRequest("http://" + m_settings.sPhoneUrl +
-                      "/command.htm?key=CANCEL");
+                           "/command.htm?key=CANCEL");
 
     Request(QUrl(sRequest), tr("Cancel transmitted"));
 }

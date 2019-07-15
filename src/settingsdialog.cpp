@@ -5,7 +5,6 @@
 #include <QKeySequence>
 
 
-
 CSettingsDialog::CSettingsDialog(const SSettings& settings, QWidget* pParent) :
     QDialog(pParent),
     m_pUi(new Ui::CSettingsDialog)

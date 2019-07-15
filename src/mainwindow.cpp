@@ -11,6 +11,7 @@
 #include <QIcon>
 #include <QByteArray>
 
+
 namespace
 {
     const QStringList supportedUirs{QStringList() << "callto:" << "sip:" << "tel:"
